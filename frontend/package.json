@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "webpack-dev-server --colors --hot --open --port 3000"
+    "start": "webpack-dev-server --colors --hot --open --port 3000",
+    "build": "webpack --progress --colors"
   },
   "author": "",
   "license": "ISC",
