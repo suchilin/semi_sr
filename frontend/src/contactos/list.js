@@ -75,9 +75,7 @@ class ContactoList extends Component{
             this.props.red_store.contacto_id = id
             this.props.red_store.all()
             this.props.store.get(id)
-            setTimeout(()=>{
             this.props.store.cModalopen = true;
-            },5000)
 
     }
 
@@ -125,10 +123,10 @@ class ContactoList extends Component{
                     <DialogContent>
                         <DialogContentText id="alert-dialog-description">
                             <br />
-                            <b>Detalles del contacto</b>
+                            <center><b>Detalles del contacto</b></center><br />
                             <b>Direccion</b>: {this.props.store.direccion}<br />
                             <Icon>phone</Icon>{this.props.store.telefono}<br /><br />
-                            <b>Redes sociales</b>
+                            <center><b>Redes sociales</b></center><br />
                             {
                                 this.props.red_store.objects.map((redsocial)=>{
                                     return(

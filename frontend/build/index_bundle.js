@@ -26073,14 +26073,10 @@ var ContactoList = (0, _mobxReact.observer)(_class = function (_Component) {
     }, {
         key: 'handleOpen',
         value: function handleOpen(id) {
-            var _this2 = this;
-
             this.props.red_store.contacto_id = id;
             this.props.red_store.all();
             this.props.store.get(id);
-            setTimeout(function () {
-                _this2.props.store.cModalopen = true;
-            }, 5000);
+            this.props.store.cModalopen = true;
         }
     }, {
         key: 'handleChange',
@@ -26096,11 +26092,11 @@ var ContactoList = (0, _mobxReact.observer)(_class = function (_Component) {
     }, {
         key: 'handleOpenUpdate',
         value: function handleOpenUpdate(id) {
-            var _this3 = this;
+            var _this2 = this;
 
             this.props.store.titulo = "Actualizar contacto";
             this.props.store.get(id).then(function () {
-                _this3.props.store.uModalopen = true;
+                _this2.props.store.uModalopen = true;
             });
         }
     }, {
@@ -26119,7 +26115,7 @@ var ContactoList = (0, _mobxReact.observer)(_class = function (_Component) {
     }, {
         key: 'render',
         value: function render() {
-            var _this4 = this;
+            var _this3 = this;
 
             return _react2.default.createElement(
                 'div',
@@ -26145,10 +26141,15 @@ var ContactoList = (0, _mobxReact.observer)(_class = function (_Component) {
                             { id: 'alert-dialog-description' },
                             _react2.default.createElement('br', null),
                             _react2.default.createElement(
-                                'b',
+                                'center',
                                 null,
-                                'Detalles del contacto'
+                                _react2.default.createElement(
+                                    'b',
+                                    null,
+                                    'Detalles del contacto'
+                                )
                             ),
+                            _react2.default.createElement('br', null),
                             _react2.default.createElement(
                                 'b',
                                 null,
@@ -26166,10 +26167,15 @@ var ContactoList = (0, _mobxReact.observer)(_class = function (_Component) {
                             _react2.default.createElement('br', null),
                             _react2.default.createElement('br', null),
                             _react2.default.createElement(
-                                'b',
+                                'center',
                                 null,
-                                'Redes sociales'
+                                _react2.default.createElement(
+                                    'b',
+                                    null,
+                                    'Redes sociales'
+                                )
                             ),
+                            _react2.default.createElement('br', null),
                             this.props.red_store.objects.map(function (redsocial) {
                                 return _react2.default.createElement(
                                     'p',
@@ -26280,7 +26286,7 @@ var ContactoList = (0, _mobxReact.observer)(_class = function (_Component) {
                             this.props.store.objects.map(function (contacto) {
                                 return _react2.default.createElement(
                                     _List.ListItem,
-                                    { key: contacto.id, button: true, onClick: _this4.handleOpen.bind(_this4, contacto.id) },
+                                    { key: contacto.id, button: true, onClick: _this3.handleOpen.bind(_this3, contacto.id) },
                                     _react2.default.createElement(_List.ListItemText, {
                                         primary: contacto.apellidos + ', ' + contacto.nombre
                                     }),
@@ -26292,12 +26298,12 @@ var ContactoList = (0, _mobxReact.observer)(_class = function (_Component) {
                                         null,
                                         _react2.default.createElement(
                                             _IconButton2.default,
-                                            { 'aria-label': 'Borrar', onClick: _this4.deleteContacto.bind(_this4, contacto.id) },
+                                            { 'aria-label': 'Borrar', onClick: _this3.deleteContacto.bind(_this3, contacto.id) },
                                             _react2.default.createElement(_Delete2.default, null)
                                         ),
                                         _react2.default.createElement(
                                             _IconButton2.default,
-                                            { 'aria-label': 'Agregar', onClick: _this4.handleOpenUpdate.bind(_this4, contacto.id) },
+                                            { 'aria-label': 'Agregar', onClick: _this3.handleOpenUpdate.bind(_this3, contacto.id) },
                                             _react2.default.createElement(
                                                 _Icon2.default,
                                                 null,
